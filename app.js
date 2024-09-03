@@ -1,4 +1,4 @@
-const correctAnswers = ['A','B','C','B']
+const correctAnswers = ['A','B','C','B','A','D']
 const quizForm = document.querySelector('.quiz-form')
 const quizLength = correctAnswers.length
 const final = document.querySelector('.score')
@@ -8,14 +8,22 @@ const scoreBlock = document.querySelector('.scoreBlock')
 quizForm.addEventListener('submit', e => {
   e.preventDefault()
   let score = 0;
-  const userAnswers = [quizForm.q1.value, quizForm.q2.value, quizForm.q3.value, quizForm.q4.value]
+  const userAnswers = [
+    quizForm.q1.value, 
+    quizForm.q2.value, 
+    quizForm.q3.value, 
+    quizForm.q4.value,
+    quizForm.q5.value,
+    quizForm.q6.value,
+  ]
 
+  
   userAnswers.forEach((answer, index) => {
     if(answer === correctAnswers[index]){
       score++
     }
   })
-
+  
   score = (score / quizLength) * 100
 
   scrollTo(0,0)
@@ -25,7 +33,7 @@ quizForm.addEventListener('submit', e => {
   let output = 0
   const timer = setInterval(() => {
     final.innerText = `${output}%`
-    if(output === score){
+    if(Math.round(output) === Math.round(score)){
       clearInterval(timer)
     } else {
       output++
