@@ -19,6 +19,7 @@ const correctAnswers = [
   'A',
   'C',
   'B',
+  'C'
 ]
 const quizForm = document.querySelector('.quiz-form')
 const quizLength = correctAnswers.length
@@ -50,6 +51,7 @@ quizForm.addEventListener('submit', e => {
     quizForm.q18.value,
     quizForm.q19.value,
     quizForm.q20.value,
+    quizForm.q21.value,
   ]
 
   
