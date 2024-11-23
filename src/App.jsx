@@ -3,7 +3,11 @@ import { useState } from 'react';
 function App() {
   return (
     <>
-      
+      <div className="intro py-3 bg-white text-center">
+        <div className="container">
+          <h2 className="text-primary display-3 my-4">Git Exam</h2>
+        </div>
+      </div>
     </>
   )
 }
@@ -47,9 +51,9 @@ quizForm.addEventListener('submit', e => {
   e.preventDefault()
   let score = 0;
   const userAnswers = [
-    quizForm.q1.value, 
-    quizForm.q2.value, 
-    quizForm.q3.value, 
+    quizForm.q1.value,
+    quizForm.q2.value,
+    quizForm.q3.value,
     quizForm.q4.value,
     quizForm.q5.value,
     quizForm.q6.value,
@@ -57,9 +61,9 @@ quizForm.addEventListener('submit', e => {
     quizForm.q8.value,
     quizForm.q9.value,
     quizForm.q10.value,
-    quizForm.q11.value, 
-    quizForm.q12.value, 
-    quizForm.q13.value, 
+    quizForm.q11.value,
+    quizForm.q12.value,
+    quizForm.q13.value,
     quizForm.q14.value,
     quizForm.q15.value,
     quizForm.q16.value,
@@ -74,27 +78,27 @@ quizForm.addEventListener('submit', e => {
     quizForm.q25.value,
   ]
 
-  
+
   userAnswers.forEach((answer, index) => {
-    if(answer === correctAnswers[index]){
+    if (answer === correctAnswers[index]) {
       score++
     }
   })
-  
+
   score = (score / quizLength) * 100
 
-  scrollTo(0,0)
+  scrollTo(0, 0)
   // final.innerText = `${score}%`
   scoreBlock.classList.remove('d-none')
 
   let output = 0
   const timer = setInterval(() => {
     final.innerText = `${output}%`
-    if(Math.round(output) === Math.round(score)){
+    if (Math.round(output) === Math.round(score)) {
       clearInterval(timer)
     } else {
       output++
     }
   }, 10)
-  
+
 })
