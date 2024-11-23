@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 
 function App() {
 
@@ -97,9 +97,9 @@ function App() {
           <h2 className="text-primary display-3 my-4">Git Exam</h2>
         </div>
       </div>
-      <div class=" scoreBlock py-4 d-none bg-light text-center">
-        <div class="container lead">
-          <p>You scored a<span class="score text-primary display-4 p-3">0%</span>Congrats!</p>
+      <div className=" scoreBlock py-4 d-none bg-light text-center">
+        <div className="container lead">
+          <p>You scored a<span className="score text-primary display-4 p-3">0%</span>Congrats!</p>
         </div>
       </div>
     </>

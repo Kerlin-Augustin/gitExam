@@ -3,7 +3,9 @@ interface QuizTitleProps {
   title: string;
 }
 
-function QuizTitle ({title}: QuizTitleProps) {
+function QuizTitle ({
+  title
+}: QuizTitleProps) {
 
   return (
     <>
