@@ -1,5 +1,5 @@
-import QuizTitle from "./components/QuizTitle"
-import ScoreBlock from "./components/ScoreBlock"
+import QuizTitle from "./components/Quiz/QuizTitle"
+import ScoreBlock from "./components/Quiz/ScoreBlock"
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
   const quizLength = correctAnswers.length
   const final = document.querySelector('.score')
   const scoreBlock = document.querySelector('.scoreBlock')
-  
+
   quizForm.addEventListener('submit', e => {
     e.preventDefault()
     let score = 0;
@@ -65,20 +65,20 @@ function App() {
       quizForm.q24.value,
       quizForm.q25.value,
     ]
-  
-  
+
+
     userAnswers.forEach((answer, index) => {
       if (answer === correctAnswers[index]) {
         score++
       }
     })
-  
+
     score = (score / quizLength) * 100
-  
+
     scrollTo(0, 0)
     // final.innerText = `${score}%`
     scoreBlock.classList.remove('d-none')
-  
+
     let output = 0
     const timer = setInterval(() => {
       final.innerText = `${output}%`
@@ -88,13 +88,21 @@ function App() {
         output++
       }
     }, 10)
-  
+
   })
 
   return (
     <>
-    <QuizTitle title="Git Exam" />
-    <ScoreBlock score={7} />
+      <QuizTitle title="Git Exam" />
+      <ScoreBlock score={7} />
+      <div class="quiz py-4 bg-primary">
+        <div class="container">
+          <h2 class="my-5 text-white">
+            Just a little practice...
+          </h2>
+
+        </div>
+      </div>
     </>
   )
 }
