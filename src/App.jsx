@@ -1,5 +1,6 @@
 import QuizTitle from "./components/Quiz/QuizTitle"
 import QuizScoreBlock from "./components/Quiz/QuizScoreBlock"
+import QuizForm from "./components/Quiz/QuizForm/QuizForm"
 
 function App() {
 
@@ -95,14 +96,7 @@ function App() {
     <>
       <QuizTitle title="Git Exam" />
       <QuizScoreBlock score={7} show={false} />
-      <div class="quiz py-4 bg-primary">
-        <div class="container">
-          <h2 class="my-5 text-white">
-            Just a little practice...
-          </h2>
-
-        </div>
-      </div>
+      <QuizForm />
     </>
   )
 }
