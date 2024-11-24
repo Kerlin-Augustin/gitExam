@@ -1,10 +1,10 @@
-interface ScoreBlockProps {
+interface QuizScoreBlockProps {
   score: number
 }
 
-function ScoreBlock({
+function QuizScoreBlock({
   score
-}: ScoreBlockProps){
+}: QuizScoreBlockProps){
   
   return (
     <>
@@ -17,4 +17,4 @@ function ScoreBlock({
   )
 }
 
-export default ScoreBlock
+export default QuizScoreBlock
