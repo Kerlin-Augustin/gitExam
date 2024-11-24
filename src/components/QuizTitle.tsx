@@ -6,7 +6,7 @@ interface QuizTitleProps {
 function QuizTitle ({
   title
 }: QuizTitleProps) {
-
+  
   return (
     <>
       <div className="intro py-3 bg-white text-center">
