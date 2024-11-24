@@ -94,7 +94,7 @@ function App() {
   return (
     <>
       <QuizTitle title="Git Exam" />
-      <QuizScoreBlock score={7} />
+      <QuizScoreBlock score={7} show={false} />
       <div class="quiz py-4 bg-primary">
         <div class="container">
           <h2 class="my-5 text-white">
