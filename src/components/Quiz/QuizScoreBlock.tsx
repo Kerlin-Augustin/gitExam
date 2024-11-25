@@ -1,23 +1,44 @@
+import { useEffect, useState } from "react";
+
 interface QuizScoreBlockProps {
-  score: number;
-  show: boolean
+  percentScore: number;
+  show: boolean;
 }
 
 function QuizScoreBlock({
-  score,
+  percentScore,
   show
 }: QuizScoreBlockProps) {
 
+  const [displayScore, setDisplayScore] = useState(0);
+  const delay = percentScore > 50 ? 30 : 50
+
+  useEffect(() => {
+    if (show) {
+      const timer = setInterval(() => {
+        setDisplayScore((prev) => {
+          if (prev >= percentScore) {
+            clearInterval(timer);
+            return percentScore;
+          }
+          return prev + 1;
+        });
+      }, delay);
+
+      return () => clearInterval(timer);
+    }
+  }, [show, percentScore]);
+
   return (
-    show && (
+    show && 
       <>
-        <div className=" scoreBlock py-4 d-none bg-light text-center">
+        <div className=" scoreBlock py-4 bg-light text-center">
           <div className="container lead">
-            <p>You scored a<span className="score text-primary display-4 p-3">{score}%</span>Congrats!</p>
+            <p>You scored a<span className="score text-primary display-4 p-3">{displayScore}%</span>Congrats!</p>
           </div>
         </div>
       </>
-    )
+    
   )
 }
 

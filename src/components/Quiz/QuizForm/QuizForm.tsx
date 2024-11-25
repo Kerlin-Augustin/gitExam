@@ -1,6 +1,12 @@
+import { useState } from "react";
 import QuizQuestion from "../QuizQuestions/QuizQuestion";
+import QuizScoreBlock from "../QuizScoreBlock";
+import QuizTitle from "../QuizTitle";
 
 function QuizForm() {
+
+  const [percentScore, setPercentScore] = useState<number>(0);
+  const [showScoreBlock, setShowScoreBlock] = useState<boolean>(false);
 
   const correctAnswers: string[] = [
     'A',
@@ -57,7 +63,9 @@ function QuizForm() {
       }
     });
 
-    const percentScore = (score / correctAnswers.length) * 100;
+    const calculatedPercentScore = (score / correctAnswers.length) * 100;
+    setPercentScore(calculatedPercentScore);
+    setShowScoreBlock(true);
     console.log(`Score: ${percentScore}%`);
 
     scrollTo(0, 0)
@@ -65,11 +73,13 @@ function QuizForm() {
 
   return (
     <>
+      <QuizTitle title="Git Exam" />
       <div className="quiz py-4 bg-primary">
         <div className="container">
           <h2 className="my-5 text-white">
             Just a little practice...
           </h2>
+          <QuizScoreBlock percentScore={percentScore} show={showScoreBlock} />
           <form className="quiz-form text-light" onSubmit={handleSubmit}>
             <QuizQuestion
               inputName="q1"
@@ -308,5 +318,3 @@ function QuizForm() {
 }
 
 export default QuizForm;
-
-// work on tracking the answers of the submission and showing the score block when submitted
