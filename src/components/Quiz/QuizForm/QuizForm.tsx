@@ -2,8 +2,48 @@ import QuizQuestion from "../QuizQuestions/QuizQuestion";
 
 function QuizForm() {
 
+  const correctAnswers: string[] = [
+    'A',
+    'B',
+    'C',
+    'B',
+    'A',
+    'D',
+    'B',
+    'D',
+    'C',
+    'D',
+    'A',
+    'D',
+    'D',
+    'B',
+    'B',
+    'C',
+    'B',
+    'A',
+    'C',
+    'B',
+    'C',
+    'A',
+    'D',
+    'A',
+    'B'
+  ]
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const formData: { [key: string]: string } = {};
+    const formElements = event.currentTarget.elements;
+
+    for (let i = 0; i < formElements.length -1; i++) {
+      const element = formElements[i] as HTMLInputElement;
+      if (element.checked) {
+        formData[element.name] = element.value;
+      }
+    }
+
+    console.log(formData); 
+    scrollTo(0, 0)
   }
 
   return (
@@ -25,7 +65,7 @@ function QuizForm() {
               <input
                 type="submit"
                 className="btn btn-light"
-                />
+              />
             </div>
           </form>
         </div>
@@ -35,3 +75,5 @@ function QuizForm() {
 }
 
 export default QuizForm;
+
+// work on tracking the answers of the submission and showing the score block when submitted
