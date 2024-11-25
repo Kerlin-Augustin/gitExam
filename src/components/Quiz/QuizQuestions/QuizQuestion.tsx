@@ -6,7 +6,6 @@ interface QuizQuestionProps {
   option2: string;
   option3?: string;
   option4?: string;
-
 }
 
 function QuizQuestion({
