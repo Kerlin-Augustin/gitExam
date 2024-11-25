@@ -46,3 +46,5 @@ function QuizQuestion({
 }
 
 export default QuizQuestion;
+
+// add an if conditional for the amount of questions asked if 2 questions are asked d-none on the class of the other input
