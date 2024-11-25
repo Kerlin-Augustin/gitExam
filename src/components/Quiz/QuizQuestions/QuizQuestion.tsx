@@ -8,6 +8,7 @@ interface QuizQuestionProps {
   option4?: string;
 }
 
+
 function QuizQuestion({
   inputName,
   question,
