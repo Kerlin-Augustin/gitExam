@@ -66,7 +66,6 @@ function QuizForm() {
     const calculatedPercentScore = (score / correctAnswers.length) * 100;
     setPercentScore(calculatedPercentScore);
     setShowScoreBlock(true);
-    console.log(`Score: ${percentScore}%`);
 
     scrollTo(0, 0)
   }
