@@ -36,11 +36,11 @@ function QuizForm() {
     event.preventDefault();
 
     userAnswer = []
-    
+
     const formData: { [key: string]: string } = {};
     const formElements = event.currentTarget.elements;
 
-    for (let i = 0; i < formElements.length -1; i++) {
+    for (let i = 0; i < formElements.length - 1; i++) {
       const element = formElements[i] as HTMLInputElement;
       if (element.checked) {
         formData[element.name] = element.value;
@@ -72,11 +72,22 @@ function QuizForm() {
           </h2>
           <form className="quiz-form text-light" onSubmit={handleSubmit}>
             <QuizQuestion
+              inputName="q1"
               question="What is git?"
+              questionNumber={1}
               option1="A Version Control System."
               option2="A request to fetch data!"
               option3="Graphical Interface Transfer."
               option4="All of the above."
+            />
+            <QuizQuestion
+              inputName="q2"
+              question="What is the terminal?"
+              questionNumber={2}
+              option1="A place at the airport."
+              option2="A GUI that takes in commands!"
+              option3="None of the above."
+              option4="A list of terms!"
             />
             <div className="text-center">
               <input
