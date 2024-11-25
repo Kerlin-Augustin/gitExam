@@ -5,8 +5,8 @@ import QuizTitle from "../QuizTitle";
 
 function QuizForm() {
 
-  const [percentScore, setPercentScore] = useState<number>(0);
-  const [showScoreBlock, setShowScoreBlock] = useState<boolean>(false);
+  const [percentScore, setPercentScore] = useState(0);
+  const [showScoreBlock, setShowScoreBlock] = useState(false);
 
   const correctAnswers: string[] = [
     'A',
