@@ -30,8 +30,13 @@ function QuizForm() {
     'B'
   ]
 
+  let userAnswer: { [key: string]: string }[] = [];
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    userAnswer = []
+    
     const formData: { [key: string]: string } = {};
     const formElements = event.currentTarget.elements;
 
@@ -42,7 +47,19 @@ function QuizForm() {
       }
     }
 
-    console.log(formData); 
+    userAnswer.push(formData)
+
+    let score: number = 0;
+    correctAnswers.forEach((correct, index) => {
+      const questionKey = `q${index + 1}`;
+      if (formData[questionKey] === correct) {
+        score++;
+      }
+    });
+
+    const percentScore = (score / correctAnswers.length) * 100;
+    console.log(`Score: ${percentScore}%`);
+
     scrollTo(0, 0)
   }
 
