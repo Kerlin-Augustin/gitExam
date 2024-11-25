@@ -89,6 +89,213 @@ function QuizForm() {
               option3="None of the above."
               option4="A list of terms!"
             />
+            <QuizQuestion
+              inputName="q3"
+              question="What software actually runs on the terminal?"
+              questionNumber={3}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q4"
+              question="What software actually runs on the terminal?"
+              questionNumber={4}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q5"
+              question="What software actually runs on the terminal?"
+              questionNumber={5}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q6"
+              question="What software actually runs on the terminal?"
+              questionNumber={6}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q7"
+              question="What software actually runs on the terminal?"
+              questionNumber={7}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q8"
+              question="What software actually runs on the terminal?"
+              questionNumber={8}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q9"
+              question="What software actually runs on the terminal?"
+              questionNumber={9}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q10"
+              question="What software actually runs on the terminal?"
+              questionNumber={10}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q11"
+              question="What software actually runs on the terminal?"
+              questionNumber={11}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q12"
+              question="What software actually runs on the terminal?"
+              questionNumber={12}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q13"
+              question="What software actually runs on the terminal?"
+              questionNumber={13}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q14"
+              question="What software actually runs on the terminal?"
+              questionNumber={14}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q15"
+              question="What software actually runs on the terminal?"
+              questionNumber={15}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q16"
+              question="What software actually runs on the terminal?"
+              questionNumber={16}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q17"
+              question="What software actually runs on the terminal?"
+              questionNumber={17}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q18"
+              question="What software actually runs on the terminal?"
+              questionNumber={18}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q19"
+              question="What software actually runs on the terminal?"
+              questionNumber={19}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q20"
+              question="What software actually runs on the terminal?"
+              questionNumber={20}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q21"
+              question="What software actually runs on the terminal?"
+              questionNumber={21}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q22"
+              question="What software actually runs on the terminal?"
+              questionNumber={22}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q23"
+              question="What software actually runs on the terminal?"
+              questionNumber={23}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q24"
+              question="What software actually runs on the terminal?"
+              questionNumber={24}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
+            <QuizQuestion
+              inputName="q25"
+              question="What software actually runs on the terminal?"
+              questionNumber={25}
+              option1="The terminal is the software."
+              option2="A container."
+              option3="A shell."
+              option4="A kernel."
+            />
             <div className="text-center">
               <input
                 type="submit"
