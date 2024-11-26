@@ -32,11 +32,11 @@ function QuizQuestion({
           <input type="radio" name={inputName} value="B" />
           <label className="form-check-label">{option2}</label>
         </div>
-        <div className="form-check my-2 text-white-50">
+        <div className={`form-check my-2 text-white-50 ${!option3 ? "d-none" : ""}`}>
           <input type="radio" name={inputName} value="C" />
           <label className="form-check-label">{option3}</label>
         </div>
-        <div className="form-check my-2 text-white-50">
+        <div className={`form-check my-2 text-white-50 ${!option4 ? "d-none" : ""}`}>
           <input type="radio" name={inputName} value="D" />
           <label className="form-check-label">{option4}</label>
         </div>
