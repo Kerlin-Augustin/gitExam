@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite",
+    "test": "vitest",
     "watch": "npx tsc --watch",
     "windowsClean": "rimraf dist"
   },

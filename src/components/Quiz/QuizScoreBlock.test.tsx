@@ -1,12 +1,15 @@
-import { describe, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import QuizScoreBlock from "./QuizScoreBlock";
+import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom/vitest'
 
-describe('Making sure the score card renders properly', () => {
-  it('Score Card Rneders', () => {
-    // Arrange
-    const sut = 
+describe('QuizScoreBlock', () => {
+  it('Score Card Renders', () => {
 
-    // Act
-    // Assert
+    render(<QuizScoreBlock show = {true} percentScore={50}/>)
+
+    const paragraph = screen.getByRole('paragraph')
+    expect(paragraph).toBeInTheDocument()
+    expect(paragraph).toHaveTextContent(/you scored a/i)
   })
 })
