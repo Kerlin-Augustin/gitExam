@@ -2,6 +2,7 @@ import { useState } from "react";
 import QuizQuestion from "../QuizQuestions/QuizQuestion";
 import QuizScoreBlock from "../QuizScoreBlock";
 import QuizTitle from "../QuizTitle";
+import PrimarySubmitButton from "../../Buttons/PrimarySubmitButton";
 
 function QuizForm() {
 
@@ -303,12 +304,7 @@ function QuizForm() {
               option3="A method for restoring deleted branches in Git."
               option4="A command for fixing merge conflicts in Git."
             />
-            <div className="text-center">
-              <input
-                type="submit"
-                className="btn btn-light"
-              />
-            </div>
+            <PrimarySubmitButton color='F8F9FA' text='Submit' textColor="black"/>
           </form>
         </div>
       </div>
