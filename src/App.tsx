@@ -1,14 +1,11 @@
-import { Routes, Route } from "react-router-dom"
-import QuizForm from "./components/Quiz/QuizForm/QuizForm"
-import LoginPage from "./components/Auth/LoginPage"
+import { useRoutes } from "react-router-dom"
+import routes from "./routes"
 
 function App() {
+  const routing = useRoutes(routes)
   return (
     <>
-      <Routes>
-        <Route path="/" element={<QuizForm />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
+      {routing}
     </>
   )
 }

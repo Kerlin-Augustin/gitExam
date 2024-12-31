@@ -1,8 +1,8 @@
 import { useState } from "react";
-import QuizQuestion from "../QuizQuestions/QuizQuestion";
-import QuizScoreBlock from "../QuizScoreBlock";
-import QuizTitle from "../QuizTitle";
-import PrimarySubmitButton from "../../Buttons/PrimarySubmitButton";
+import QuizQuestion from "../../components/Quiz/QuizQuestions/QuizQuestion";
+import QuizScoreBlock from "../../components/Quiz/QuizScoreBlock";
+import QuizTitle from "../../components/Quiz/QuizTitle";
+import PrimarySubmitButton from "../../components/Buttons/PrimarySubmitButton";
 
 function QuizForm() {
 
