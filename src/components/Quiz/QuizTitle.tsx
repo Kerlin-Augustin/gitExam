@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import PrimarySubmitButton from "../Buttons/PrimarySubmitButton";
 
 interface QuizTitleProps {
@@ -8,16 +9,20 @@ function QuizTitle({
   title
 }: QuizTitleProps) {
 
+  const navigate = useNavigate()
+
   return (
     <>
       <div style={{display: "flex", justifyContent: "flex-end"}}>
         <PrimarySubmitButton
           buttonColor="#0D6EFD"
+          onClick={() => navigate("/login")}
           text="Login"
           textColor="white"
         />
         <PrimarySubmitButton
           buttonColor="#0D6EFD"
+          onClick={() => alert("Hasn't been set up yet")}
           text="Sign Up"
           textColor="white"
         />
@@ -32,5 +37,3 @@ function QuizTitle({
 }
 
 export default QuizTitle
-
-// get rid of white space at the tip of the title
