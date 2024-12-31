@@ -22,9 +22,9 @@ function QuizTitle({
           textColor="white"
         />
       </div>
-      <div className="intro py-3 bg-white text-center">
+      <div className="intro bg-white text-center">
         <div className="container">
-          <h2 className="text-primary display-3 my-4">{title}</h2>
+          <h2 className="text-primary display-3 mb-4">{title}</h2>
         </div>
       </div>
     </>
