@@ -1,11 +1,11 @@
 interface PrimarySubmitButtonProps {
-  color: string,
+  buttonColor: string,
   text: string,
   textColor: string,
 }
 
 function PrimarySubmitButton({
-  color,
+  buttonColor,
   text,
   textColor,
 }: PrimarySubmitButtonProps) {
@@ -15,7 +15,7 @@ function PrimarySubmitButton({
         <input
           type="submit"
           className="btn btn-light"
-          style={{backgroundColor: color, color: textColor}}
+          style={{ backgroundColor: buttonColor, color: textColor }}
           value={text}
         />
       </div>
