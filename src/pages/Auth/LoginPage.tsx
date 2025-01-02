@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
 
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -16,22 +16,22 @@ function LoginPage() {
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#efeeec'}}>
-        <div className="text-center rounded border" style={{boxShadow: '10px 5px 5px #0D6EFD', width: '35em', background: 'white' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#efeeec' }}>
+        <div className="text-center rounded border" style={{ boxShadow: '10px 9px 5px #acacac, 0em 1px 5.4em #0D6EFD', width: '35em', background: 'white' }}>
           <form onSubmit={handleSubmit}>
-            <h2>Login</h2>
+            <h2 className="my-3">Login</h2>
             <div className="mb-4">
-              <label className="block mb-1 text-gray-700">Username</label>
+              <p style={{marginRight: '10em', marginBottom: '0em'}}><label className="block text-gray-700">Email:</label></p>
               <input
-                type="text"
+                type="email"
                 className="w-full px-3 py-2 border rounded"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
             <div className="mb-4">
-              <label className="block mb-1 text-gray-700">Password</label>
+              <p style={{marginRight: '8em', marginBottom: '0em'}}><label className="block text-gray-700">Password:</label></p>
               <input
                 type="password"
                 className="w-full px-3 py-2 border rounded"
@@ -44,6 +44,7 @@ function LoginPage() {
               buttonColor={"#0D6EFD"}
               text={"Login"}
               textColor={"white"}
+              buttonWidth={'13.3em'}
             />
           </form>
           <p className="mt-3">

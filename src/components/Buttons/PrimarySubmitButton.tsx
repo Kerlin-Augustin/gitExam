@@ -1,8 +1,9 @@
 interface PrimarySubmitButtonProps {
   buttonColor: string,
+  buttonWidth?: string,
   text: string,
   textColor: string,
-  onClick?: () => void
+  onClick?: () => void,
 }
 
 
@@ -10,7 +11,8 @@ function PrimarySubmitButton({
   buttonColor,
   text,
   textColor,
-  onClick
+  onClick,
+  buttonWidth,
 }: PrimarySubmitButtonProps) {
   return (
     <>
@@ -19,7 +21,7 @@ function PrimarySubmitButton({
           type="submit"
           className="btn btn-light"
           onClick={onClick}
-          style={{ backgroundColor: buttonColor, color: textColor }}
+          style={{ backgroundColor: buttonColor, color: textColor, width: buttonWidth }}
           value={text}
         />
       </div>
