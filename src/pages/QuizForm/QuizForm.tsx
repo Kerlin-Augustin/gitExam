@@ -304,7 +304,10 @@ function QuizForm() {
               option3="A method for restoring deleted branches in Git."
               option4="A command for fixing merge conflicts in Git."
             />
-            <PrimarySubmitButton buttonColor='F8F9FA' text='Submit' textColor="black"/>
+            <PrimarySubmitButton
+              buttonColor='F8F9FA'
+              text='Submit'
+              textColor="black" />
           </form>
         </div>
       </div>
