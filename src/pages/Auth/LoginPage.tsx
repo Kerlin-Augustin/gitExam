@@ -11,7 +11,7 @@ function LoginPage() {
     event.preventDefault()
     console.log('Hello')
   }
-
+  
   const navigate = useNavigate()
 
   return (
