@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import cors from "cors";
 import { supabase } from "../lib/supabase.js"; 
 
@@ -22,6 +23,13 @@ app.post("/login", async (req, res) => {
     console.error(error); // Log for debugging purposes
     res.status(500).json({ error: "An unexpected error occurred." });
   }
+});
+
+app.use(express.static(path.join(process.cwd(), 'dist')));
+
+// Always have this route last because it is a catch all for rerouting
+app.get('*', (req, res) => {
+  res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
 });
 
 // Start the server
