@@ -12,7 +12,7 @@ function SignupPage() {
     event.preventDefault()
     
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,9 +23,9 @@ function SignupPage() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("Login successful!");
+        setMessage("Signup successful!");
       } else {
-        setMessage(data.error || "Login failed.");
+        setMessage(data.error || "Signup failed.");
       }
     } catch (error) {
       setMessage("An error occurred.");
