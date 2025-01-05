@@ -17,10 +17,32 @@ app.post("/login", async (req, res) => {
 
   try {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) return res.status(400).json({ error: error.message });
+
+    if (error) {
+      return res.status(400).json({ error: error.message });
+    }
+
+    // Check if user exists in database
+    const { data: userExists } = await supabase
+      .from("users")
+      .select("*")
+      .eq("email", email)
+      .single();
+
+    if (!userExists) {
+      // Add user to database
+      const { error: insertError } = await supabase
+        .from("users")
+        .insert({ email, created_at: new Date().toISOString() });
+
+      if (insertError) {
+        return res.status(500).json({ error: "Failed to save user data." });
+      }
+    }
+
     res.status(200).json({ message: "Login successful", data });
   } catch (error) {
-    console.error(error); // Log for debugging purposes
+    console.error(error);
     res.status(500).json({ error: "An unexpected error occurred." });
   }
 });
