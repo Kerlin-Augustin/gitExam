@@ -11,6 +11,11 @@ function LoginPage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
+    if(!email || !password){
+      setMessage('Missing email or password')
+      return
+    }
+
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
         method: "POST",
@@ -21,6 +26,8 @@ function LoginPage() {
       });
 
       const data = await response.json();
+
+      console.log(response)
 
       if (response.ok) {
         setMessage("Login successful!");

@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(process.cwd(), 'dist')));
 
 app.post(`/api/login`, async (req, res) => {
   const { email, password } = req.body;
@@ -40,7 +41,6 @@ app.post(`/api/login`, async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(process.cwd(), 'dist')));
 
 // Always have this route last because it is a catch all for rerouting
 app.get('*', (req, res) => {

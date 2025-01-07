@@ -12,7 +12,8 @@ function SignupPage() {
     event.preventDefault()
 
     if(!email || !password){
-      throw new Error('Missing email or password')
+      setMessage('Missing email or password')
+      return
     }
 
     console.log('email:', email, "password:", password, "message:", message, import.meta.env)
