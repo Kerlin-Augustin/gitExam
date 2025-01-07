@@ -9,31 +9,30 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(process.cwd(), 'dist')));
 
 app.post(`/api/login`, async (req, res) => {
   const { email, password } = req.body;
-
+  
   console.log(req.body)
-
+  
   try {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-
+    
     if (error) {
       return res.status(400).json({ error: error.message });
     }
-
+    
     // Check if user exists in database
     const { data: userExists } = await supabase
-      .from("users")
-      .select("*")
-      .eq("email", email)
-      .single();
-
+    .from("users")
+    .select("*")
+    .eq("email", email)
+    .single();
+    
     if (!userExists) {
       throw new Error('User not found. Double check your email or password!')
     }
-
+    
     res.status(200).json({ message: "Login successful", data });
   } catch (error) {
     console.error(error);
@@ -41,6 +40,7 @@ app.post(`/api/login`, async (req, res) => {
   }
 });
 
+app.use(express.static(path.join(process.cwd(), 'dist')));
 
 // Always have this route last because it is a catch all for rerouting
 app.get('*', (req, res) => {
@@ -51,5 +51,3 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-// find api url that will go in my prod env
