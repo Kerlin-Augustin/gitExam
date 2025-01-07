@@ -10,9 +10,9 @@ function LoginPage() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    
+
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,9 +30,9 @@ function LoginPage() {
     } catch (error) {
       setMessage("An error occurred.");
     }
-  
+
   }
-  
+
   const navigate = useNavigate()
 
   return (
@@ -42,23 +42,27 @@ function LoginPage() {
           <form onSubmit={handleSubmit}>
             <h2 className="my-3">Login</h2>
             <div className="mb-4">
-              <p style={{marginRight: '10em', marginBottom: '0em'}}><label className="block text-gray-700">Email:</label></p>
+              <p style={{ marginRight: '10em', marginBottom: '0em' }}>
+                <label htmlFor="email" className="block text-gray-700">Email:</label>
+              </p>
               <input
+                id="email"
                 type="email"
                 className="w-full px-3 py-2 border rounded"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
               />
             </div>
             <div className="mb-4">
-              <p style={{marginRight: '8em', marginBottom: '0em'}}><label className="block text-gray-700">Password:</label></p>
+              <p style={{ marginRight: '8em', marginBottom: '0em' }}>
+                <label htmlFor="password" className="block text-gray-700">Password:</label>
+              </p>
               <input
+                id="password"
                 type="password"
                 className="w-full px-3 py-2 border rounded"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
               />
             </div>
             <PrimarySubmitButton

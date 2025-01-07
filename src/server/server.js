@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.post("/login", async (req, res) => {
+app.post(`/api/login`, async (req, res) => {
   const { email, password } = req.body;
 
   console.log(req.body)
@@ -30,14 +30,7 @@ app.post("/login", async (req, res) => {
       .single();
 
     if (!userExists) {
-      // Add user to database
-      const { error: insertError } = await supabase
-        .from("users")
-        .insert({ email, created_at: new Date().toISOString() });
-
-      if (insertError) {
-        return res.status(500).json({ error: "Failed to save user data." });
-      }
+      throw new Error('User not found. Double check your email or password!')
     }
 
     res.status(200).json({ message: "Login successful", data });
@@ -58,3 +51,5 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+// find api url that will go in my prod env
