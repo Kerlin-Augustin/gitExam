@@ -28,6 +28,7 @@ function SignupPage() {
       });
 
       const data = await response.json();
+      console.log(response)
 
       if (response.ok) {
         setMessage("Signup successful!");
@@ -35,6 +36,7 @@ function SignupPage() {
         setMessage(data.error || "Signup failed.");
       }
     } catch (error) {
+      console.log(error)
       setMessage("An error occurred.");
     }
   }
