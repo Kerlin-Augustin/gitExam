@@ -2,7 +2,7 @@ import { useState } from "react";
 import PrimarySubmitButton from "../../components/Buttons/PrimarySubmitButton"
 import { useNavigate } from "react-router-dom";
 
-function LoginPage() {
+function SignupPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,8 +16,10 @@ function LoginPage() {
       return
     }
 
+    console.log('email:', email, "password:", password, "message:", message, import.meta.env)
+
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,17 +29,14 @@ function LoginPage() {
 
       const data = await response.json();
 
-      console.log(response)
-
       if (response.ok) {
-        setMessage("Login successful!");
+        setMessage("Signup successful!");
       } else {
-        setMessage(data.error || "Login failed.");
+        setMessage(data.error || "Signup failed.");
       }
     } catch (error) {
       setMessage("An error occurred.");
     }
-
   }
 
   const navigate = useNavigate()
@@ -47,7 +46,7 @@ function LoginPage() {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#efeeec' }}>
         <div className="text-center rounded border" style={{ boxShadow: '10px 9px 5px #acacac, 0em 1px 5.4em #0D6EFD', width: '35em', background: 'white' }}>
           <form onSubmit={handleSubmit}>
-            <h2 className="my-3">Login</h2>
+            <h2 className="my-3">Sign Up</h2>
             <div className="mb-4">
               <p style={{ marginRight: '10em', marginBottom: '0em' }}>
                 <label htmlFor="email" className="block text-gray-700">Email:</label>
@@ -58,6 +57,7 @@ function LoginPage() {
                 className="w-full px-3 py-2 border rounded"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
             <div className="mb-4">
@@ -70,18 +70,19 @@ function LoginPage() {
                 className="w-full px-3 py-2 border rounded"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
             <PrimarySubmitButton
               buttonColor={"#0D6EFD"}
-              text={"Login"}
+              text={"Sign Up"}
               textColor={"white"}
               buttonWidth={'13.3em'}
             />
           </form>
-          <p>{message}</p>
+          <p style={{ color: '#dc2626' }}>{message}</p>
           <p className="mt-3">
-            <span style={{ cursor: 'pointer', color: '#0D6EFD' }} onClick={() => navigate("/signup")}>Sign up</span> or Login with <span style={{ cursor: 'pointer', color: '#6441a5', textDecoration: 'underline' }} onClick={() => console.log("Add Twitch Auth")}>Twitch</span></p>
+            <span>Sign up</span> or <span style={{ cursor: 'pointer', color: '#0D6EFD' }} onClick={() => navigate("/login")}>Login</span> with <span style={{ cursor: 'pointer', color: '#6441a5', textDecoration: 'underline' }} onClick={() => console.log("Add Twitch Auth")}>Twitch</span></p>
           <p>Back to <span style={{ cursor: 'pointer', color: '#0D6EFD', textDecoration: 'underline' }} onClick={() => navigate("/")}>Exam</span></p>
         </div>
       </div>
@@ -89,4 +90,4 @@ function LoginPage() {
   )
 }
 
-export default LoginPage
+export default SignupPage

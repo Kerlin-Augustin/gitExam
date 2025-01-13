@@ -22,7 +22,7 @@ function QuizTitle({
         />
         <PrimarySubmitButton
           buttonColor="#0D6EFD"
-          onClick={() => alert("Hasn't been set up yet")}
+          onClick={() => navigate("/signup")}
           text="Sign Up"
           textColor="white"
         />
