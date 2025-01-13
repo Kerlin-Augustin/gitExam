@@ -6,10 +6,11 @@
   "scripts": {
     "build": "vite build",
     "clean": "rm -rf dist",
+    "dev": "nodemon server.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite",
-    "start:server": "nodemon server.js",
+    "start:server": "node server.js",
     "test": "vitest",
     "watch": "npx tsc --watch",
     "windowsClean": "rimraf dist"
