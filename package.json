@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite",
-    "start:server": "nodemon src/server/server.js",
+    "start:server": "nodemon server.js",
     "test": "vitest",
     "watch": "npx tsc --watch",
     "windowsClean": "rimraf dist"
