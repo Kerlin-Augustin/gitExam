@@ -27,7 +27,10 @@ function LoginPage() {
 
       const data = await response.json();
 
-      console.log(response)
+      console.log('response:', response)
+      console.log('data:', data)
+      console.log('email:', email)
+      console.log('password:', password)
 
       if (response.ok) {
         setMessage("Login successful!");
