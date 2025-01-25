@@ -11,11 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post(`/api/login`, async (req, res) => {
-  console.log('Login route hit');
   const { email, password } = req.body;
-  
-  console.log('email', email)
-  console.log('password', password)
   
   try {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
