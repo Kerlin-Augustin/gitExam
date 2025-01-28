@@ -16,7 +16,7 @@ app.post(`/api/login`, async (req, res) => {
   try {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-    console.log('Supabase Response:', { data, error })
+    // console.log('Supabase Response:', { data, error })
     
     if (error) {
       return res.status(400).json({ error: error.message });
@@ -28,6 +28,13 @@ app.post(`/api/login`, async (req, res) => {
     res.status(500).json({ error: "An unexpected error occurred." });
   }
 });
+
+app.post('signup', async (req, res) => {
+  const {email, password} = req.body
+
+  // console.log(email, password)
+
+})
 
 // Start the server
 app.listen(PORT, () => {
