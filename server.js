@@ -15,8 +15,6 @@ app.post(`/api/login`, async (req, res) => {
   
   try {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-
-    console.log('Supabase Response:', { data, error })
     
     if (error) {
       return res.status(400).json({ error: error.message });
