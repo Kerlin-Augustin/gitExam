@@ -29,10 +29,21 @@ app.post(`/api/login`, async (req, res) => {
   }
 });
 
-app.post('signup', async (req, res) => {
+app.post('api/signup', async (req, res) => {
   const {email, password} = req.body
 
-  // console.log(email, password)
+  console.log(email, password)
+  try{
+    const { data, error } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+      options: {
+        emailRedirectTo: 'https://mygitexam.vercel.app',
+      }
+    })
+  } catch (error){
+    console.error(error)
+  }
 
 })
 
