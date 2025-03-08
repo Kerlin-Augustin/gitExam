@@ -41,6 +41,8 @@ app.post('/api/signup', async (req, res) => {
         emailRedirectTo: 'https://mygitexam.vercel.app',
       }
     })
+
+    res.status(200).json({message: "Account Created"})
   } catch (error){
     console.error(error)
   }
