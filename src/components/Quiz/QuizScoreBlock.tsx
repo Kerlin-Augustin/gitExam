@@ -32,7 +32,7 @@ function QuizScoreBlock({
   return (
     show && 
       <>
-        <div className=" scoreBlock py-4 bg-light text-center">
+        <div data-testid='scoreCard' className=" scoreBlock py-4 bg-light text-center">
           <div className="container lead">
             <p>You scored a<span className="score text-primary display-4 p-3">{displayScore}%</span>Congrats!</p>
           </div>

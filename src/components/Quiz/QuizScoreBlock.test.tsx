@@ -12,4 +12,11 @@ describe('QuizScoreBlock', () => {
     expect(paragraph).toBeInTheDocument()
     expect(paragraph).toHaveTextContent(/you scored a/i)
   })
+
+  it('Score Card Display none', () => {
+    render(<QuizScoreBlock show={false} percentScore={0} />)
+    
+    const block = screen.queryByTestId('scoreCard')
+    expect(block).toBeNull()
+  })
 })
