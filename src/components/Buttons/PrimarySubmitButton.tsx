@@ -6,7 +6,6 @@ interface PrimarySubmitButtonProps {
   onClick?: () => void,
 }
 
-
 function PrimarySubmitButton({
   buttonColor,
   text,
